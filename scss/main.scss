@@ -1,0 +1,132 @@
+/* Scss Document */
+
+*:not(ul):not(ol){
+	margin: 0;
+	padding: 0;
+}
+body{
+	width: 100vw;
+	height: 100vh;
+	background-color: aliceblue;
+	overflow: hidden;
+}
+.base-square{
+	z-index: 0;
+	position: absolute;
+	position: relative;
+	width: 50vh;
+	height: 50vh;
+	background-color: brown;
+	margin: 25vh auto;
+	.overlay{
+		position: absolute;
+		width: 50vh;
+		height: 50vh;
+		background-color: rgba(0,0,0,.5);
+		display: none;
+		cursor: not-allowed;
+		z-index: 999;
+	}
+	&:hover .overlay{
+		display: block;
+	}
+	
+	.maze{
+		position: absolute;
+		z-index: 2;
+		background-color: aliceblue;
+		
+		&:hover ~ .overlay{
+			display: none;
+		}
+		
+		&.maze1{
+			width: 2vh;
+			height: 30vh;
+			top:0vh;
+			left: 10vh;
+		}
+		&.maze2{
+			width: 2vh;
+			height: 2vh;
+			top: 28vh;
+			left: 10vh;
+			z-index: 3;
+			transition: all 1s;
+			&:hover{
+				width: 10vh;
+				transition: all 1s;
+				+ .maze {
+					display: block;
+				}
+			}
+		}
+		&.maze3{
+			width: 2vh;
+			height: 2vh;
+			top: 28vh;
+			left: 18vh;
+			z-index: 4;
+			transition: all 1s;
+			display: none;
+			&:hover{
+				height: 15vh;
+				transition: all 1s;
+				display: block;
+				+ .maze {
+					display: block;
+				}
+			}
+		}
+		&.maze4{
+			width: 2vh;
+			height: 2vh;
+			top: 41vh;
+			left: 18vh;
+			z-index: 5;
+			transition: all 1s;
+			display:none;
+			&:hover{
+				width: 30vh;
+				transition: all 1s;
+				display:block;
+				+ .maze {
+					display:block;
+				}
+			}
+		}
+		&.maze5{
+			width: 2vh;
+			height: 2vh;
+			top: 41vh;
+			left: 48vh;
+			z-index: 5;
+			transition: all 1s;
+			display:none;
+			&:hover{
+				width: 2vh;
+				transition: all 1s;
+				display:block;
+				+ .maze {
+					display:block;
+				}
+			}
+		}
+		&.maze6{
+			width: 10vh;
+			height: 15vh;
+			top: 30vh;
+			left: 50vh;
+			z-index: 5;
+			transition: all 1s;
+			display:none;
+			background-color: aquamarine;
+			line-height: 15vh;
+			text-align: center;
+			&:hover{
+				transition: all 1s;
+				display:block;
+			}
+		}
+	}
+}
